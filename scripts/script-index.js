@@ -1,77 +1,61 @@
 $(document).ready(function () {
+const idArticles = [];
 
-    $.ajax({
-        //L'URL de la requête
-        url: "https://test.spaceflightnewsapi.net/api/v2/articles?_limit=10",
-        //La méthode d'envoi (type de requête)
-        method: "GET",
-        //Le format de réponse attendu
-        dataType: "json",
-    })
-
-        .done(function (response) {
-            function test() {
-                console.log(response);
-                // STORE THE JSON ARRAY
-                let result = response
-                // FOR EACH INDEX OF THE ARRAY I CREATE AN ARTICLE
-                for (var i = 0; i < result.length; i++) {
-                    $("<article>\
+let apiUpdate = (suffix) => {
+    let apiUrl = `https://spaceflightnewsapi.net/api/v2/${suffix}`;
+    fetch(apiUrl).then((response) => response.json().then(data => {
+        for (let i = 0; i < data.length; i++) {
+            idArticles.push(data[i].id)
+        }
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                $("<article>\
                 <div class='flex-post'>\
-                <h2>'" + result[i].title + "'</h2>\
-                <span>'" + result[i]['publishedAt'] + "'</span>\
+                <h2>'" + data[i].title + "'</h2>\
+                <span>'" + data[i]['publishedAt'] + "'</span>\
                 </div>\
                 <div class='content'>\
-                <img src='" + result[i].imageUrl + "' alt=''>\
-                <p>'" + result[i]['summary'] + "'</p>\
+                <img src='" + data[i].imageUrl + "' alt=''>\
+                <p>'" + data[i]['summary'] + "'</p>\
                 </div>\
                 </article>\
                 ").appendTo(".feed-article")
-                }
-
             }
-
-            test();
-
-            // CREATE AN REFRESH ICON
-            $('.container-main').append("<span><a><img src='C:\\Users\\33769\\Desktop\\JS-project\\images\\refresh.png'></a></span>")
-            $('.container-main span a img').addClass('imageRefresh')
-
-            $('.imageRefresh').click(function () {
-                $('.feed-article article').remove();
-                test();
-            })
-
-        })
-
-
-        .fail(function (error) {
-            alert("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
-        })
-
-
-
+        } else {
+            console.log(data)
+            $("<article>\
+                <div class='flex-post'>\
+                <h2>'" + data.title + "'</h2>\
+                <span>'" + data['publishedAt'] + "'</span>\
+                </div>\
+                <div class='content'>\
+                <img src='" + data.imageUrl + "' alt=''>\
+                <p>'" + data['summary'] + "'</p>\
+                </div>\
+                </article>\
+                ").appendTo(".feed-article")
+        }
+        }
+        )
+    );
+}
+apiUpdate("articles");
 
 
+// CREATE AN REFRESH ICON
+    $('.container-main').append("<span><a><img alt='' src='C:\\Users\\tarik\\Desktop\\JS-project\\images\\refresh.png'></a></span>")
+    $('.container-main span a img').addClass('imageRefresh')
 
+    $('.imageRefresh').click(function () {
+        $('.feed-article article').remove();
+        let x = 0;
+        while (x < idArticles.length) {
+            const random = Math.floor(Math.random() * idArticles.length);
+            apiUpdate(`articles/${idArticles[random]}`);
+            x++;
+        }
+    })
 })
 
 
-
-// $.get("https://test.spaceflightnewsapi.net/api/v2/articles?_limit=20", function (response) {
-//     let allArticles = []
-//     allArticles.push(response.id)
-//     for (let i = 1; i < response.length; i++) {
-//         allArticles.push(response[i].id)
-//     }
-//     const random = Math.floor(Math.random() * allArticles.length);
-// })
-// $.get("https://test.spaceflightnewsapi.net/api/v2/articles?_limit=20", function (response) {
-//     let allArticles = []
-//     allArticles.push(response.id)
-//     for (let i = 1; i < response.length; i++) {
-//         allArticles.push(response[i].id)
-//     }
-//     const random = Math.floor(Math.random() * allArticles.length);
-// })
 
