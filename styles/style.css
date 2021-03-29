@@ -37,6 +37,64 @@ body {
     border-bottom: solid lightgrey 0.5px;
 }
 
+/*DROP DOWN MENU*/
+
+.drop-btn {
+    background-color: #90bcb3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    transition: all 0.1s ease-in;
+  }
+
+.drop-btn:hover {
+    background-color: white;
+    border: 1px solid #90bcb3;
+    color: black;
+}
+
+.dropdown {
+    position: absolute;
+    top: 80px;
+    z-index: 2;
+}
+.inside-dropdown {
+    display: none;
+    overflow: auto;
+    background-color: rgb(245, 245, 245);
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.inside-dropdown li {
+    list-style-type:none;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.inside-dropdown li:nth-child(odd) {
+    background-color:#eaf3f2;
+}
+
+.inside-dropdown a {
+    text-decoration: none;
+}
+
+.inside-dropdown a:nth-child(odd) {
+    color: black;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /*MAIN*/
 
 .container-main {

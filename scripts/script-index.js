@@ -1,8 +1,25 @@
 $(document).ready(function () {
-/*
-$('.bg-header .container-main').prepend("<div class='carousel'>"); 
-$('.carousel').append("<div><img src=''></div><img src=''><div><img src=''></div><div></div>");*/
 
+//Drop down Menu 
+myFunction = () => {
+    document.getElementById("inside-dropdown").classList.toggle("show");
+  }
+
+window.onclick = function(event) {
+    if (!event.target.matches('.drop-btn')) {
+      const dropdown = document.getElementsByClassName("inside-dropdown");
+      var i;
+      console.log(dropdown.length)
+      for (i = 0; i < dropdown.length; i++) {
+        var openDropdown = dropdown[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+}
+
+// Carousel with the plugin slick
 $('.carousel').slick({
     slideToShow: 1,
     slideToScroll: 1,
@@ -12,7 +29,7 @@ $('.carousel').slick({
     infinite: true,
     dots: true,
 
-});
+})
 
 
 // This Array will contain all articles id's 
@@ -22,7 +39,9 @@ const idArticles = [];
 // v2/articles display all articles - v2/articles/id display one article
 const apiUpdate = (suffix) => {
     let apiUrl = `https://spaceflightnewsapi.net/api/v2/${suffix}`;
-    fetch(apiUrl).then((response) => response.json().then(data => {
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then(data => {
 
         //If the api Response is an array then 
         if (data.length > 0) {
@@ -58,9 +77,7 @@ const apiUpdate = (suffix) => {
                 </article>\
                 ").appendTo(".feed-article")
         }
-        }
-        )
-    );
+        });
 }
 // Call the function to get all articles
 apiUpdate("articles");
