@@ -39,11 +39,12 @@ let apiUpdate = (suffix) => {
         )
     );
 }
+
 apiUpdate("articles");
 
 
 // CREATE AN REFRESH ICON
-    $('.container-main').append("<span><a><img alt='' src='C:\\Users\\tarik\\Desktop\\JS-project\\images\\refresh.png'></a></span>")
+    $('.container-main').append("<span><a href='#' ><img alt='' src='images/refresh.png'></a></span>")
     $('.container-main span a img').addClass('imageRefresh')
 
     $('.imageRefresh').click(function () {
