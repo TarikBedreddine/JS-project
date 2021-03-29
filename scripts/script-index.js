@@ -15,36 +15,18 @@ $('.carousel').slick({
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// This Array will contain all articles id's 
 const idArticles = [];
 
+//the function apiUpdate has the suffix of the URL API 
+// v2/articles display all articles - v2/articles/id display one article
 const apiUpdate = (suffix) => {
     let apiUrl = `https://spaceflightnewsapi.net/api/v2/${suffix}`;
     fetch(apiUrl).then((response) => response.json().then(data => {
-        
+
+        //If the api Response is an array then 
         if (data.length > 0) {
-        
+            // I send all id's to the idArticles array
             for (let i = 0; i < data.length; i++) {
                 idArticles.push(data[i].id)
             }
@@ -61,7 +43,9 @@ const apiUpdate = (suffix) => {
                 </article>\
                 ").appendTo(".feed-article")
             }
-        } else {
+        } 
+        //if it's only one article to display i don't need an index
+        else {
             $("<article>\
                 <div class='flex-post'>\
                 <h2>" + data.title + "</h2>\
@@ -78,13 +62,13 @@ const apiUpdate = (suffix) => {
         )
     );
 }
-
+// Call the function to get all articles
 apiUpdate("articles");
 
-// CREATE AN REFRESH ICON
+// CREATE AN REFRESH ICON (random results)
     $('.container-main').append("<span id='refresh-span'><a href='#feed-section' ><img alt='' src='images/refresh.png'></a></span>")
     $('.container-main span a img').addClass('imageRefresh')
-
+// When the button refresh is clicked, a loop get random articles (thanks to the idArticles array)
     $('.imageRefresh').click(function () {
         $('.feed-article article').remove();
         let x = 0;
