@@ -6,7 +6,6 @@ body {
 .bg-header {
     width: 100%;
     height: 200px;
-    background-color: darkolivegreen;
 }
 
 .container {
@@ -31,7 +30,7 @@ body {
 
 .nav-bar li a {
     margin: 0 25px;
-    color: white;
+    color: black;
     font-size: 20px;
     padding-bottom: 5px;
     text-decoration: none;
@@ -42,12 +41,21 @@ body {
 
 .container-main {
     position: relative;
+    width: 1080px;
+    margin: 0 auto;
+    
+}
+
+.feed-section {
+    padding: 150px 0 ;
 }
 
 .feed-article {
-    width: 800px;
-    padding: 50px;
-    margin: 0 auto;
+    width: 100%;
+}
+
+.feed-article article:nth-child(even){
+    background-color: rgb(243, 243, 243);
 }
 
 .flex-post {
@@ -56,11 +64,12 @@ body {
 }
 
 .flex-post h2 {
-    padding-right: 200px;
+    padding-right: 300px;
 }
 
 .flex-post span {
-    margin-left: 50px;
+    position: absolute;
+    right: 0;
 }
 
 .content {
@@ -81,20 +90,42 @@ body {
 }
 
 
-.imageRefresh {
+#refresh-span {
     position: absolute;
+    top: 115px;
+    right: 35px;
+}
+
+.imageRefresh {
     width: 20px;
     height: auto;
-    top: 20px;
-    right: 100px;
+
 }
+.carousel img{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover !important;
+}
+
+#selfie-perseverance{
+    object-position: top;
+}
+
+.slick-next::before {
+   color: white !important;
+}
+.slick-prev::before {
+    color: white !important;
+ }
+ 
 
 /*FOOTER*/
 
 .bg-footer {
     width: 100%;
     height: 200px;
-    background-color: lightgrey;
+    background-color: #90bcb3;
 }
 
 .footer-content {
