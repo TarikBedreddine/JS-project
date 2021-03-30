@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Space Report</title>
     <!--    STYLESHEETS-->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick.css">
@@ -15,52 +15,84 @@
 </head>
 
 <body>
-    <div class="bg-header">
-        <div class="container">
-            <header>
-                <nav class="nav-bar">
-                    <ul>
-                        <li><a href="#">Feed</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Games</a></li>
-                    </ul>
-                </nav>
+<div class="bg-header">
+    <div class="container">
+        <header>
 
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
-                        <div class="inside-dropdown" id="inside-dropdown">
-                            <li><a href="#">Feed</a></li>
-                            <li><a href="#">Gallery</a></li>     
-                            <li><a href="#">Games</a></li>    
-                        </div>
-                    </div>
-            </header>
-        </div>
+            <!--                NAVBAR -->
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#">Feed</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Games</a></li>
+                </ul>
+            </nav>
 
-        <!--    CAROUSEL-->
-        <div class="carousel">
-            <div><img src="images/mars.jpg">
-            </div>
-            <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
-            <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
-            </div>
-        </div>
-        <div class="bg-main">
-            <div class="container-main">
-                <!--    FEED-->
-                <section class="feed-section" id="feed-section">
-                    <div class="feed-article">
-                    </div>
-            </div>
-        </div>
-        
-        <footer>
-            <div class="bg-footer">
-                <div class="footer-content">
-                    <p>Copyright 2021</p>
+            <!--                DROPDOWN MENU -->
+            <div class="dropdown">
+                <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
+                <div class="inside-dropdown" id="inside-dropdown">
+                    <li><a href="#">Feed</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Games</a></li>
                 </div>
             </div>
-        </footer>
-</body>
+        </header>
+    </div>
 
+    <!--    CAROUSEL-->
+
+    <div class="carousel">
+        <div><img src="images/mars.jpg" alt="">
+        </div>
+        <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
+        <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
+        </div>
+    </div>
+    <div class="container-main">
+        <!--    FEED-->
+        <section class="feed-section" id="feed-section">
+            <div class="feed-article">
+            </div>
+        </section>
+
+
+        <!--        ADD AN ARTICLE -->
+        <section class="article-form">
+            <h3>Write your article</h3>
+            <form action="" method="post" class="feed-form">
+                <div class="inputs">
+                    <div class="form-title">
+                        <label for="title">Title</label>
+                        <input type="text" id="title">
+                    </div>
+                    <div class="form-file">
+                        <label for="article-img">Select your image</label>
+                        <input type="file" accept="image/x-png, image/jpeg" id="article-img">
+                    </div>
+                    <div class="form-date">
+                        <label for="data">Date</label>
+                        <input type="date" id="data">
+                    </div>
+                    <div class="form-textarea">
+                        <label for="addArticle" autofocus></label>
+                        <textarea id="addArticle"></textarea>
+                    </div>
+                </div>
+                <div class="input-button">
+                    <button>Let's GO !</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <div class="bg-footer">
+            <div class="footer-content">
+                <p>Copyright 2021</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
 </html>
