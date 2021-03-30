@@ -211,7 +211,7 @@ body {
     float: right;
     margin-bottom: 20px;
 }
-.form-textarea #addArticle {
+.form-textarea #summary {
     min-width: 100%;
     min-height: 100px;
 }
