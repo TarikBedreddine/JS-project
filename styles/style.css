@@ -3,13 +3,14 @@ body {
     margin: 0;
     padding: 0;
 }
-.bg-header {
-    width: 100%;
+header {
+    width: 1080px;
     height: 200px;
+    margin: 0 auto;
 }
 
 .container {
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -95,6 +96,25 @@ body {
     align-items: center;
 }
 
+/*CAROUSEL*/
+.carousel img{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover !important;
+}
+
+#selfie-perseverance{
+    object-position: top;
+}
+
+.slick-next::before {
+    color: white !important;
+}
+.slick-prev::before {
+    color: white !important;
+}
+
 /*MAIN*/
 .container-main {
     position: relative;
@@ -158,26 +178,6 @@ body {
     height: auto;
 
 }
-
-/*CAROUSEL*/
-.carousel img{
-    margin: 0 auto;
-    width: 100%;
-    height: 500px;
-    object-fit: cover !important;
-}
-
-#selfie-perseverance{
-    object-position: top;
-}
-
-.slick-next::before {
-   color: white !important;
-}
-.slick-prev::before {
-    color: white !important;
- }
-
 /*ADD ARTICLE */
 
 .feed-form{
@@ -239,6 +239,22 @@ body {
     border: 1px solid #90bcb3;
     color: black;
 }
+
+/*GALLERY PAGE */
+
+.gallery-icons {
+    display: flex;
+}
+
+.gallery-icons img{
+    width: 20px;
+    height: auto;
+}
+
+
+
+
+
 
 
 /*FOOTER*/

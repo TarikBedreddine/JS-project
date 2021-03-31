@@ -14,31 +14,28 @@
     <script src="scripts/script-gallery.js" defer></script>
 </head>
 <body>
-<div class="bg-header">
-    <div class="container">
-        <header>
+<header>
+    <!--                NAVBAR -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="games.html">Games</a></li>
+        </ul>
+    </nav>
 
-            <!--                NAVBAR -->
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="index.html">Feed</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="games.html">Games</a></li>
-                </ul>
-            </nav>
-
-            <!--                DROPDOWN MENU -->
-            <div class="dropdown">
-                <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
-                <div class="inside-dropdown" id="inside-dropdown">
-                    <li><a href="index.html">Feed</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="games.html">Games</a></li>
-                </div>
-            </div>
-        </header>
+    <!--                DROPDOWN MENU -->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
+        <div class="inside-dropdown" id="inside-dropdown">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="games.html">Games</a></li>
+        </div>
     </div>
+</header>
 
+<div class="container">
     <!--    CAROUSEL-->
 
     <div class="carousel">
@@ -51,7 +48,11 @@
 </div>
 
 <div class="container-main">
-
+    <!--    GALLERY -->
+    <div class="gallery-icons">
+        <img src="images/grid.png" alt="">
+        <img src="images/frame.png" alt="">
+    </div>
 </div>
 </body>
 
