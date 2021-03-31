@@ -3,13 +3,21 @@ body {
     margin: 0;
     padding: 0;
 }
-.bg-header {
-    width: 100%;
+header {
+    width: 1080px;
     height: 200px;
+    margin: 0 auto;
+}
+
+.invisible {
+    display: none;
+}
+.visible {
+    display: block;
 }
 
 .container {
-    width: 1080px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -95,6 +103,25 @@ body {
     align-items: center;
 }
 
+/*CAROUSEL*/
+.carousel img{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover !important;
+}
+
+#selfie-perseverance{
+    object-position: top;
+}
+
+.slick-next::before {
+    color: white !important;
+}
+.slick-prev::before {
+    color: white !important;
+}
+
 /*MAIN*/
 .container-main {
     position: relative;
@@ -158,26 +185,6 @@ body {
     height: auto;
 
 }
-
-/*CAROUSEL*/
-.carousel img{
-    margin: 0 auto;
-    width: 100%;
-    height: 500px;
-    object-fit: cover !important;
-}
-
-#selfie-perseverance{
-    object-position: top;
-}
-
-.slick-next::before {
-   color: white !important;
-}
-.slick-prev::before {
-    color: white !important;
- }
-
 /*ADD ARTICLE */
 
 .feed-form{
@@ -238,6 +245,101 @@ body {
     background-color: white;
     border: 1px solid #90bcb3;
     color: black;
+}
+
+/*GALLERY PAGE */
+
+.gallery {
+    width: 100%;
+    margin: 100px 0;
+}
+
+.gallery h2 {
+    text-align: center;
+}
+
+.filters{
+    position: relative;
+    width: 100%;
+}
+
+.gallery-icons {
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gallery-icons img:first-child{
+    width: 30px;
+    height: auto;
+}
+.gallery-icons img:last-child{
+    width: 40px;
+    height: auto;
+}
+
+.add-picture {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease all;
+}
+.add-picture .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-picture img{
+    width: 25px;
+    height: auto;
+    padding-right: 20px;
+}
+
+#submit-picture {
+    margin: 18px 0 0 18px;
+}
+
+.div-picture-row{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.div-picture-column{
+    width: 100%;
+}
+
+.picture-row {
+    width: 15%;
+    height: 250px;
+    margin-top: 30px;
+    margin-left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.picture-column {
+    width: 70%;
+    margin: 30px auto;
+    height: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.picture-row img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.picture-column img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 

@@ -1,20 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery</title>
+    <title>Space Report</title>
     <!--    STYLESHEETS-->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick-theme.css">
     <!--    SCRIPTS-->
-    <script src="scripts/script-gallery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="plugins/slick-1.8.1/slick/slick.min.js" defer></script>
+    <script src="scripts/script-all.js" defer></script>
+    <script src="scripts/script-gallery.js" defer></script>
 </head>
-<header>
-
-</header>
 <body>
+<header>
+    <!--                NAVBAR -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="games.html">Games</a></li>
+        </ul>
+    </nav>
+
+    <!--                DROPDOWN MENU -->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
+        <div class="inside-dropdown" id="inside-dropdown">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="games.html">Games</a></li>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <!--    CAROUSEL-->
+
+    <div class="carousel">
+        <div><img src="images/mars.jpg" alt="">
+        </div>
+        <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
+        <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container-main">
+    <!--    GALLERY -->
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="filters">
+            <div class="gallery-icons">
+                <img id="row-format" src="images/grid.png" alt="">
+                <img id="column-format" src="images/frame.png" alt="">
+            </div>
+            <div class="add-picture">
+                <img class="invisible" id="icon-cancel-picture" src="images/minus.png" alt="">
+                <img class="visible" id="icon-add-picture" src="images/add.png" alt="">
+                <div class="form">
+                    <label class="invisible" for="imageUrl">Enter an image URL :</label>
+                    <input class="invisible" type="url" id="imageUrl" pattern="https://.*"
+                           placeholder="https://website.com/image">
+                </div>
+                <button class="invisible" id="submit-picture">Send</button>
+            </div>
+        </div>
+        <div class="div-picture-row">
+
+        </div>
+    </section>
 
 
+</div>
 </body>
+
 <footer>
 
 </footer>
