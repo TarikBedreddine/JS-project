@@ -59,7 +59,7 @@
 
         <!--        ADD AN ARTICLE -->
         <section class="article-form">
-            <h3>Write your article</h3>
+            <h2>Write your article</h2>
             <form class="feed-form">
                 <div class="inputs">
                     <div class="form-title">
@@ -67,8 +67,8 @@
                         <input type="text" id="title">
                     </div>
                     <div class="form-file">
-                        <label for="imageUrl">Select your image</label>
-                        <input type="file" accept="image/x-png, image/jpeg" id="imageUrl">
+                        <label for="imageUrl">Enter an image URL</label>
+                        <input type="url" id="imageUrl" pattern="https://.*" placeholder="https://website.com/image">
                     </div>
                     <div class="form-date">
                         <label for="publishedAt">Date</label>

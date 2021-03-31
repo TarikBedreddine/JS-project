@@ -222,7 +222,22 @@ body {
 }
 .feed-form .input-button button {
     position: absolute;
-    right: 0;
+    right: -7px;
+    background-color: #90bcb3;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-width: bold;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    transition: all 0.3s ease-in;
+}
+
+.feed-form .input-button button:hover {
+    background-color: white;
+    border: 1px solid #90bcb3;
+    color: black;
 }
 
 
