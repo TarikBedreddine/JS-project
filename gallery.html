@@ -1,20 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery</title>
+    <title>Space Report</title>
     <!--    STYLESHEETS-->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick-theme.css">
     <!--    SCRIPTS-->
-    <script src="scripts/script-gallery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="plugins/slick-1.8.1/slick/slick.min.js" defer></script>
+    <script src="scripts/script-all.js" defer></script>
+    <script src="scripts/script-gallery.js" defer></script>
 </head>
-<header>
-
-</header>
 <body>
+<div class="bg-header">
+    <div class="container">
+        <header>
 
+            <!--                NAVBAR -->
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Feed</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="games.html">Games</a></li>
+                </ul>
+            </nav>
 
+            <!--                DROPDOWN MENU -->
+            <div class="dropdown">
+                <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
+                <div class="inside-dropdown" id="inside-dropdown">
+                    <li><a href="index.html">Feed</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="games.html">Games</a></li>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!--    CAROUSEL-->
+
+    <div class="carousel">
+        <div><img src="images/mars.jpg" alt="">
+        </div>
+        <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
+        <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container-main">
+
+</div>
 </body>
+
 <footer>
 
 </footer>

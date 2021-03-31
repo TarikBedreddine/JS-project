@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-
 <head>
     <meta charset="UTF-8">
     <title>Space Report</title>
@@ -11,6 +10,7 @@
     <!--    SCRIPTS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="plugins/slick-1.8.1/slick/slick.min.js" defer></script>
+    <script src="scripts/script-all.js" defer></script>
     <script src="scripts/script-index.js" defer></script>
 </head>
 
@@ -23,8 +23,8 @@
             <nav class="nav-bar">
                 <ul>
                     <li><a href="#">Feed</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Games</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="games.html">Games</a></li>
                 </ul>
             </nav>
 
@@ -33,66 +33,66 @@
                 <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
                 <div class="inside-dropdown" id="inside-dropdown">
                     <li><a href="#">Feed</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Games</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="games.html">Games</a></li>
                 </div>
             </div>
         </header>
     </div>
-
-    <!--    CAROUSEL-->
-
-    <div class="carousel">
-        <div><img src="images/mars.jpg" alt="">
-        </div>
-        <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
-        <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
-        </div>
-    </div>
-    <div class="container-main">
-        <!--    FEED-->
-        <section class="feed-section" id="feed-section">
-            <div class="feed-article">
-            </div>
-        </section>
-
-
-        <!--        ADD AN ARTICLE -->
-        <section class="article-form">
-            <h2>Write your article</h2>
-            <form class="feed-form">
-                <div class="inputs">
-                    <div class="form-title">
-                        <label for="title">Title</label>
-                        <input type="text" id="title">
-                    </div>
-                    <div class="form-file">
-                        <label for="imageUrl">Enter an image URL</label>
-                        <input type="url" id="imageUrl" pattern="https://.*" placeholder="https://website.com/image">
-                    </div>
-                    <div class="form-date">
-                        <label for="publishedAt">Date</label>
-                        <input type="date" id="publishedAt">
-                    </div>
-                    <div class="form-textarea">
-                        <label for="summary"></label>
-                        <textarea id="summary"></textarea>
-                    </div>
-                </div>
-                <div class="input-button">
-                    <button id="article-submit">Let's GO !</button>
-                </div>
-            </form>
-        </section>
-    </div>
-
-    <footer>
-        <div class="bg-footer">
-            <div class="footer-content">
-                <p>Copyright 2021</p>
-            </div>
-        </div>
-    </footer>
 </div>
+
+<!--    CAROUSEL-->
+
+<div class="carousel">
+    <div><img src="images/mars.jpg" alt="">
+    </div>
+    <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
+    <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
+    </div>
+</div>
+<div class="container-main">
+    <!--    FEED-->
+    <section class="feed-section" id="feed-section">
+        <div class="feed-article">
+        </div>
+    </section>
+
+    <!--        ADD AN ARTICLE -->
+    <section class="article-form">
+        <h2>Write your article</h2>
+        <form class="feed-form">
+            <div class="inputs">
+                <div class="form-title">
+                    <label for="title">Title</label>
+                    <input type="text" id="title">
+                </div>
+                <div class="form-file">
+                    <label for="imageUrl">Enter an image URL</label>
+                    <input type="url" id="imageUrl" pattern="https://.*" placeholder="https://website.com/image">
+                </div>
+                <div class="form-date">
+                    <label for="publishedAt">Date</label>
+                    <input type="date" id="publishedAt">
+                </div>
+                <div class="form-textarea">
+                    <label for="summary"></label>
+                    <textarea id="summary"></textarea>
+                </div>
+            </div>
+            <div class="input-button">
+                <button id="article-submit">Let's GO !</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+
+<footer>
+    <div class="bg-footer">
+        <div class="footer-content">
+            <p>Copyright 2021</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
