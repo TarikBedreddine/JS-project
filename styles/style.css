@@ -96,14 +96,13 @@ body {
 }
 
 /*MAIN*/
-
 .container-main {
     position: relative;
     width: 1080px;
     margin: 0 auto;
-    
 }
 
+/*FEED*/
 .feed-section {
     padding: 150px 0 ;
 }
@@ -147,7 +146,7 @@ body {
     margin-top: 30px;
 }
 
-
+/*ICON REFRESH*/
 #refresh-span {
     position: absolute;
     top: 115px;
@@ -159,6 +158,8 @@ body {
     height: auto;
 
 }
+
+/*CAROUSEL*/
 .carousel img{
     margin: 0 auto;
     width: 100%;
@@ -176,10 +177,71 @@ body {
 .slick-prev::before {
     color: white !important;
  }
- 
+
+/*ADD ARTICLE */
+
+.feed-form{
+    margin-bottom: 80px;
+}
+.feed-form label{
+    text-align: start;
+    margin-bottom: 10px;
+}
+.feed-form .inputs {
+    width: 100%;
+    text-align: center;
+}
+.feed-form .form-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.feed-form .form-date {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.feed-form .form-file {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    float: right;
+    margin-bottom: 20px;
+}
+.form-textarea #summary {
+    min-width: 100%;
+    min-height: 100px;
+}
+.feed-form .input-button {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.feed-form .input-button button {
+    position: absolute;
+    right: -7px;
+    background-color: #90bcb3;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-width: bold;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    transition: all 0.3s ease-in;
+}
+
+.feed-form .input-button button:hover {
+    background-color: white;
+    border: 1px solid #90bcb3;
+    color: black;
+}
+
 
 /*FOOTER*/
-
 .bg-footer {
     width: 100%;
     height: 200px;
