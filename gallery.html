@@ -51,9 +51,21 @@
     <!--    GALLERY -->
     <section class="gallery">
         <h2>Gallery</h2>
-        <div class="gallery-icons">
-            <img id="row-format" src="images/grid.png" alt="">
-            <img id="column-format" src="images/frame.png" alt="">
+        <div class="filters">
+            <div class="gallery-icons">
+                <img id="row-format" src="images/grid.png" alt="">
+                <img id="column-format" src="images/frame.png" alt="">
+            </div>
+            <div class="add-picture">
+                <img class="invisible" id="icon-cancel-picture" src="images/minus.png" alt="">
+                <img class="visible" id="icon-add-picture" src="images/add.png" alt="">
+                <div class="form">
+                    <label class="invisible" for="imageUrl">Enter an image URL :</label>
+                    <input class="invisible" type="url" id="imageUrl" pattern="https://.*"
+                           placeholder="https://website.com/image">
+                </div>
+                <button class="invisible" id="submit-picture">Send</button>
+            </div>
         </div>
         <div class="div-picture-row">
 

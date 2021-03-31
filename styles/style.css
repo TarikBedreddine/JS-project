@@ -9,6 +9,13 @@ header {
     margin: 0 auto;
 }
 
+.invisible {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
 .container {
     width: 100%;
     margin: 0 auto;
@@ -251,6 +258,11 @@ header {
     text-align: center;
 }
 
+.filters{
+    position: relative;
+    width: 100%;
+}
+
 .gallery-icons {
     width: 120px;
     display: flex;
@@ -265,6 +277,30 @@ header {
 .gallery-icons img:last-child{
     width: 40px;
     height: auto;
+}
+
+.add-picture {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease all;
+}
+.add-picture .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-picture img{
+    width: 25px;
+    height: auto;
+    padding-right: 20px;
+}
+
+#submit-picture {
+    margin: 18px 0 0 18px;
 }
 
 .div-picture-row{
