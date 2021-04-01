@@ -10,11 +10,19 @@ $(document).ready(function () {
         //The booleen allows me to determine if it's an image which come from the API or added by the user 
         // I add a button to delete the desired image 
         if (isUpdated) {
-            $(" <div class='picture-row'>\
+            if ($("#div-picture").hasClass("div-picture-column")) {
+                $(" <div class='picture-column'>\
+                <img src='" + url + "' alt=''>\
+                <img class='delete-icon' src='images/x-button.png'>\
+                </div>\
+                ").appendTo(".div-picture-column")
+            } else {
+                $(" <div class='picture-row'>\
             <img src='" + url + "' alt=''>\
             <img class='delete-icon' src='images/x-button.png'>\
             </div>\
             ").appendTo(".div-picture-row")
+            }
         }
         else {
             $(" <div class='picture-row'>\

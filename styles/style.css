@@ -280,6 +280,10 @@ header {
     height: auto;
 }
 
+#row-format, #column-format {
+    cursor: pointer;
+}
+
 .add-picture {
     position: absolute;
     right: 0;
@@ -298,10 +302,12 @@ header {
     width: 25px;
     height: auto;
     padding-right: 20px;
+    cursor: pointer;
 }
 
 #submit-picture {
     margin: 18px 0 0 18px;
+    cursor: pointer;
 }
 
 .div-picture-row{
@@ -331,6 +337,7 @@ header {
     margin: 30px auto;
     height: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: relative;
 }
 .picture-row img:first-child{
     width: 100%;
@@ -338,7 +345,7 @@ header {
     object-fit: cover;
     position: relative;
 }
-.picture-column img{
+.picture-column img:first-child{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -351,6 +358,7 @@ header {
     top: -10px;
     right: -20px;
     z-index: 3;
+    cursor: pointer;
 }
 
 /*FOOTER*/
