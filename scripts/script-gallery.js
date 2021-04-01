@@ -1,12 +1,33 @@
 $(document).ready(function () {
-    // function to add pictures in the gallery (i allow me to give a different id for each picture)
-    let i = 0
-    const updatePicture = (url) => {
-        $(" <div class='picture-row'>\
-            <img id='img"+ i +"' src='" + url + "' alt=''>\
+
+    const images = {
+        id: [],
+        url: []
+    }
+
+    // function to add pictures in the gallery (i allow me to give a different id for each picture) 
+    const updatePicture = (url, isUpdated) => {
+        //The booleen allows me to determine if it's an image which come from the API or added by the user 
+        // I add a button to delete the desired image 
+        if (isUpdated) {
+            $(" <div class='picture-row'>\
+            <img src='" + url + "' alt=''>\
+            <img class='delete-icon' src='images/x-button.png'>\
             </div>\
             ").appendTo(".div-picture-row")
+        }
+        else {
+            $(" <div class='picture-row'>\
+            <img src='" + url + "' alt=''>\
+            </div>\
+            ").appendTo(".div-picture-row")
+        }
+        //Delete 
+        $('.delete-icon').on("click", function (e) {
+            $(this).parent().remove()
+        });
     }
+
 
     // Check if the URL is valid
     function isValidUrl(url) {
@@ -23,8 +44,7 @@ $(document).ready(function () {
         .then(data => {
             data.forEach(function (item) {
                 if (isValidUrl(item.url)) {
-                    updatePicture(item.url)
-                    i++
+                    updatePicture(item.url, false)
                 }
             });
         });
@@ -47,6 +67,7 @@ $(document).ready(function () {
         $('#icon-add-picture').toggleClass("visible invisible")
         $('#icon-cancel-picture').toggleClass("invisible visible")
     })
+    // To hide the input image URL & button when the user click on icon "minus"
     $("#icon-cancel-picture").click(function () {
         $(".add-picture input, label").toggleClass("visible invisible")
         $("#submit-picture").toggleClass("visible invisible")
@@ -54,20 +75,14 @@ $(document).ready(function () {
         $('#icon-add-picture').toggleClass("invisible visible")
     })
 
-
-
-
     //On submit button click, i check if the URL is valid and call the function to add a new picture
-    $('#submit-picture').click(function() {
+    $('#submit-picture').click(function () {
         const imageUrl = $('#imageUrl').val()
         if (isValidUrl(imageUrl)) {
-            i++
-            updatePicture(imageUrl)
-            alert ("Your image has been succesfully added to the Gallery")
+            updatePicture(imageUrl, true)
+            alert("Your image has been succesfully added to the Gallery")
         } else {
             alert("URL is not valid !")
         }
     })
-
-
 })
