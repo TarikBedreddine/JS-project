@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-//Drop down Menu
+    //Drop down Menu
     myFunction = () => {
         document.getElementById("inside-dropdown").classList.toggle("show");
     }
@@ -18,7 +18,7 @@ $(document).ready(function () {
         }
     }
 
-// Carousel with the plugin slick
+    // Carousel with the plugin slick
     $('.carousel').slick({
         slideToShow: 1,
         slideToScroll: 1,

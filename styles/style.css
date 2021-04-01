@@ -143,6 +143,7 @@ header {
 }
 
 .flex-post {
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -331,10 +332,11 @@ header {
     height: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-.picture-row img{
+.picture-row img:first-child{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: relative;
 }
 .picture-column img{
     width: 100%;
@@ -342,6 +344,14 @@ header {
     object-fit: cover;
 }
 
+.delete-icon {
+    width: 25px;
+    height: auto;
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    z-index: 3;
+}
 
 /*FOOTER*/
 .bg-footer {
