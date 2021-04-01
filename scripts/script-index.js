@@ -1,5 +1,20 @@
 $(document).ready(function () {
 
+    // Function to ADD ARTICLE and little icon that permit to delete the post 
+    createPost = (data) => {
+        $("<article>\
+                <div class='flex-post update'>\
+                <h2>" + data.title + "</h2>\
+                <span id='date'>" + new Date(data['publishedAt']).toLocaleDateString('FR', { timeZone: 'UTC' }) + "</span>\
+                <img class='delete-icon' src='images/x-button.png'>\
+                </div>\
+                <div class='content'>\
+                <img src=" + data.imageUrl + " alt=>\
+                <p>" + data['summary'] + "</p>\
+                </div>\
+                </article>\
+                ").appendTo(".feed-article")
+    }
 
     // This Array will contain all articles id's 
     const idArticles = [];
@@ -19,32 +34,25 @@ $(document).ready(function () {
                     // For each data of the resonse i create an article with multiple data inside
                     for (var i = 0; i < data.length; i++) {
                         $("<article>\
-                <div class='flex-post'>\
-                <h2>" + data[i].title + "</h2>\
-                <span>" + new Date(data[i]['publishedAt']).toLocaleDateString('FR', { timeZone: 'UTC' }) + "</span>\
-                </div>\
-                <div class='content'>\
-                <img src=" + data[i].imageUrl + " alt=>\
-                <p>" + data[i]['summary'] + "</p>\
-                </div>\
-                </article>\
-                ").appendTo(".feed-article")
+                            <div class='flex-post'>\
+                            <h2>" + data[i].title + "</h2>\
+                            <span>" + new Date(data[i]['publishedAt']).toLocaleDateString('FR', { timeZone: 'UTC' }) + "</span>\
+                            </div>\
+                            <div class='content'>\
+                            <img src=" + data[i].imageUrl + " alt=>\
+                            <p>" + data[i]['summary'] + "</p>\
+                            </div>\
+                            </article>\
+                            ").appendTo(".feed-article")
                     }
                 }
 
                 //Display only one article (allows me to display the random's id's )
                 else {
-                    $("<article>\
-                    <div class='flex-post'>\
-                    <h2>" + data.title + "</h2>\
-                    <span>" + new Date(data['publishedAt']).toLocaleDateString('FR', { timeZone: 'UTC' }) + "</span>\
-                    </div>\
-                    <div class='content'>\
-                    <img src=" + data.imageUrl + " alt=''>\
-                    <p>" + data['summary'] + "</p>\
-                    </div>\
-                    </article>\
-                    ").appendTo(".feed-article")
+                    //when the icon refresh is target the createPost function is called 
+                    createPost(data)
+                    //remove the delete icon because it's a feature for only posts added by user's
+                    $(".delete-icon").remove()
                 }
             });
     }
@@ -66,27 +74,6 @@ $(document).ready(function () {
             x++;
         }
     })
-
-    // Function to ADD ARTICLE and little icon that permit to delete the post 
-    createPost = (data) => {
-        $("<article>\
-                <div class='flex-post update'>\
-                <h2>" + data.title + "</h2>\
-                <span id='date'>" + new Date(data['publishedAt']).toLocaleDateString('FR', { timeZone: 'UTC' }) + "</span>\
-                <img class='delete-icon' src='images/x-button.png'>\
-                </div>\
-                <div class='content'>\
-                <img src=" + data.imageUrl + " alt=>\
-                <p>" + data['summary'] + "</p>\
-                </div>\
-                </article>\
-                ").appendTo(".feed-article")
-
-        // On icon click the grand parent (flex-post) is removed
-        $('.delete-icon').on("click", function (e) {
-            $(this).parent().parent().remove()
-        });
-    }
 
     // Function to check if it's a blank field
     function isBlank(str) {
@@ -128,17 +115,16 @@ $(document).ready(function () {
                 event.preventDefault()
                 // Call the function to post an article with the object in parameter 
                 createPost(data)
+
+                // On icon click the grand parent (flex-post) is removed
+                $('.delete-icon').on("click", function (e) {
+                    $(this).parent().parent().remove()
+                });
             } else {
                 alert("Enter a valid image URL please !")
             }
         } else {
             alert("Fill all the inputs form please !")
         }
-
-
     }
 })
-
-
-
-
