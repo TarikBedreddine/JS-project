@@ -1,21 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Games</title>
+    <title>Space Report</title>
     <!--    STYLESHEETS-->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="plugins/slick-1.8.1/slick/slick-theme.css">
     <!--    SCRIPTS-->
-    <script src="scripts/script-games.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="plugins/slick-1.8.1/slick/slick.min.js" defer></script>
+    <script src="scripts/script-all.js" defer></script>
+    <script src="scripts/script-games.js" defer></script>
 </head>
+
+<body>
 <header>
 
+    <!--                NAVBAR -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Games</a></li>
+        </ul>
+    </nav>
+
+    <!--                DROPDOWN MENU -->
+    <div class="dropdown">
+        <button onclick="myFunction()" class="drop-btn" id="drop-btn">Menu</button>
+        <div class="inside-dropdown" id="inside-dropdown">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#">Games</a></li>
+        </div>
+    </div>
 </header>
-<body>
+
+<div class="container">
+    <!--    CAROUSEL-->
+
+    <div class="carousel">
+        <div><img src="images/mars.jpg" alt="">
+        </div>
+        <div><img src="images/perseverance-sky-descent.jpg" alt=""></div>
+        <div><img id="selfie-perseverance" src="images/selfie-perseverance.jpeg" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- GAMES  -->
+
+<div class="container-main">
+    <section class="first-game">
+        <button>Start new game</button>
+        <div class="chifoumi">
+            <div class="choice">
+                <img class="img-choice rock" src="images/rock.png" alt="">
+                <img class="img-choice paper" src="images/paper.png" alt="">
+                <img class="img-choice scissors" src="images/scissors.png" alt="">
+            </div>
+            <div class="count-result">
+                <div class="won">
+                    <span>Won :</span>
+                    <span id="won"></span>
+                </div>
+                <div class="lost">
+                    <span>Lost :</span>
+                    <span id="lost"></span>
+                </div>
+                <div class="tied">
+                    <span>Tied :</span>
+                    <span id="tied"></span>
+                </div>
+            </div>
+            <div class="result">
+                <div class="playerChoice">
+                    <span>Player choice :</span>
+                    <span id="playerChoice"></span>
+                </div>
+                <div class="computerChoice">
+                    <span>Computer choice :</span>
+                    <span id="computerChoice"></span>
+                </div>
+            </div>
+            <div class="commands">
+                <button>Play again :)</button>
+                <button id="play">Play !</button>
+            </div>
+        </div>
+    </section>
+</div>
 
 
-</body>
 <footer>
-
+    <div class="bg-footer">
+        <div class="footer-content">
+            <p>Copyright 2021</p>
+        </div>
+    </div>
 </footer>
+</body>
 </html>
