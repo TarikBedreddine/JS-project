@@ -52,8 +52,19 @@
 <!-- GAMES  -->
 
 <div class="container-main">
-    <section class="first-game">
-        <button>Start new game</button>
+    <div class="newGame">
+        <h2>Rock, Paper, Scissors</h2>
+        <h3 class="rules-title">Rules :</h3>
+        <h4>Select a choice between Rock, Paper and Scissors</h4>
+        <p class="rules">Rock > scissors <br>
+        Scissors > paper <br>
+        Paper > Rock <br></p>
+
+        <p>A game is played in 3 points, good luck !</p>
+    </div>
+    <button id="newGame">START NEW GAME</button>
+
+    <section class="first-game invisible">
         <div class="chifoumi">
             <div class="choice">
                 <img class="img-choice rock" src="images/rock.png" alt="">
@@ -86,11 +97,11 @@
                     <span id="computerChoice"></span>
                 </div>
             </div>
-            <div class="final-result">
+            <div class="finalResult">
     
             </div>
             <div class="commands">
-                <button>Play again :)</button>
+                <button id="playAgain">Play again :)</button>
                 <button id="play">Play !</button>
             </div>
         </div>
