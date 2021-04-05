@@ -1,10 +1,14 @@
 $(document).ready(function () {
-    
+    let reset = 0
     let playerChoice = ""
-    let i = 0
-    let won = 1
-    let lost = 1
-    let tied = 1
+    let resultPerRound = {
+        won: 0,
+        lost: 0,
+        tied: 0
+    }
+    let won = 0
+    let lost = 0
+    let tied = 0
 
 
     
@@ -19,7 +23,7 @@ $(document).ready(function () {
                     $(".rock").addClass("choice-selected")
                 }
             })
-         })
+        })
 
         
         $(".paper").on("click", function () {
@@ -63,61 +67,90 @@ $(document).ready(function () {
 
 
     playGame = () => { 
+       
+        reset++
+
         let uChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
-        console.log(uChoice)
-        console.log(computerChoice)
         findWinner(uChoice, computerChoice);
+        //LE SCORE EST INCREMENTE
+
+
+        if (reset == 1) {
+            $(".round").html("<h3>Round 1</h3>")
+        } else if (reset == 2) {
+            $(".round h3").text("Round 2")
+        } else if (reset == 3) {
+        
+            $(".round h3").text("Round 3")
+            if (won > lost) {
+                resultPerRound.won++
+                console.log("You won")
+                $('#won').text(resultPerRound.won)
+            } else if (tied > 0 && (lost == won)) {
+                resultPerRound.tied++
+                console.log("Tied")
+                $('#tied').text(resultPerRound.tied)
+            } else {
+                resultPerRound.lost++
+                console.log("You lost")
+                $('#lost').text(resultPerRound.lost)
+            }
+
+            won = 0
+            lost = 0
+            tied = 0
+            reset = 0
+        }
     }
 
     function findWinner(playerChoice, computerChoice) {
-        if (playerChoice === computerChoice) {
-            $('#tied').html(tied++)
-            $('.playerChoice #playerChoice').html(playerChoice)
+        // Set VS word 
+        $('.versus').html("<p>VS</p>")
+
+        // Set results to upperCase 
+        function playerComputerUpperCase () {
+            playerChoice = playerChoice.toUpperCase()
+            computerChoice = computerChoice.toUpperCase()
+        }
+
+        if (playerChoice == computerChoice) {
+            playerComputerUpperCase()
+            $('.playerChoice #playerChoice').html(playerChoice + " (You)")
             $('.computerChoice #computerChoice').html(computerChoice)
+            tied++
 
-        } else if (playerChoice === "rock" && computerChoice === "scissors") {
-            $('#won').html(won++)
-            $('.playerChoice #playerChoice').html(playerChoice)
+        } else if (playerChoice == "rock" && computerChoice === "scissors") {
+            playerComputerUpperCase()
+            $('.playerChoice #playerChoice').html(playerChoice + " (You)")
             $('.computerChoice #computerChoice').html(computerChoice)
+            won++
 
 
-        } else if (playerChoice === "paper" && computerChoice === "rock") {
-            $('#won').html(won++)
-            $('.playerChoice #playerChoice').html(playerChoice)
+        } else if (playerChoice == "paper" && computerChoice === "rock") {
+            playerComputerUpperCase()
+            $('.playerChoice #playerChoice').html(playerChoice + " (You)")
             $('.computerChoice #computerChoice').html(computerChoice)
+            won++
 
-
-        } else if (playerChoice === "scissors" && computerChoice === "paper") {
-            $('#won').html(won++)
-            $('.playerChoice #playerChoice').html(playerChoice)
+        } else if (playerChoice == "scissors" && computerChoice === "paper") {
+            playerComputerUpperCase()
+            $('.playerChoice #playerChoice').html(playerChoice + " (You)")
             $('.computerChoice #computerChoice').html(computerChoice)
-
+            won++
 
         } else {
-            $('#lost').html(lost++)
-            $('.playerChoice #playerChoice').html(playerChoice)
+            playerComputerUpperCase()
+            $('.playerChoice #playerChoice').html(playerChoice + " (You)")
             $('.computerChoice #computerChoice').html(computerChoice)
+            lost++
         }
+
     }
 
     
 
     $(document).on("click", "#play", function() {
-        i++
-        if (i == 3) {
-            won = 0;
-            lost = 0;
-            tied = 0;
-            if ($('#lost').html() > $('#won').html()) {
-                alert ("vous avez perdu")
-                i = 0
-            } else {
-                alert ("vous avez gagné !")
-                i = 0
-            }
-        }
-        
         playGame()
     })
 
