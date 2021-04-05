@@ -116,10 +116,7 @@ $(document).ready(function () {
                 // Call the function to post an article with the object in parameter 
                 createPost(data)
 
-                // On icon click the grand parent (flex-post) is removed
-                $('.delete-icon').on("click", function (e) {
-                    $(this).parent().parent().remove()
-                });
+
             } else {
                 alert("Enter a valid image URL please !")
             }
@@ -127,4 +124,10 @@ $(document).ready(function () {
             alert("Fill all the inputs form please !")
         }
     }
+    
+    // On icon click the grand parent (flex-post) is removed
+    $(document).on("click", ".delete-icon", function (e) {
+        $(this).parent().parent().remove()
+        console.log("salut")
+    });
 })

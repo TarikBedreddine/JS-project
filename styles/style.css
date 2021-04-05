@@ -10,7 +10,7 @@ header {
 }
 
 .invisible {
-    display: none;
+    display: none !important;
 }
 .visible {
     display: block;
@@ -360,6 +360,147 @@ header {
     z-index: 3;
     cursor: pointer;
 }
+
+/* GAMES */
+
+.newGame {
+    width: 30%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 100px 0 100px 150px;
+}
+.newGame .rules-title {
+    margin: 0;
+}
+
+.newGame .rules {
+    text-align: center;
+}
+
+#newGame {
+    width: 200px;
+    height: 80px;
+    background-color: rgba(39, 156, 137, 0.2);
+    border: none;
+    font-weight: normal;
+    cursor: pointer;
+    position: absolute;
+    right: 300px;
+    top: 100px;
+    transition: all ease-in-out 0.2s;
+}
+#newGame:hover {
+    border: solid 3px rgba(39, 156, 137, 0.2);
+    background-color: white;
+    width: 205px;
+    height: 85px;
+    font-weight: bolder;
+
+
+}
+
+.first-game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-game button {
+    margin-top: 50px;
+}
+
+.chifoumi {
+    margin: 80px 0;
+    position: relative;
+}
+    
+.chifoumi .choice img{
+    width: 80px;
+    height: auto;
+    padding: 30px;
+    margin: 0 15px;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.chifoumi .commands {
+    text-align: center;
+}
+
+.chifoumi .commands button:first-child {
+    background-color:lightgray;
+    color: black;
+    margin-right: 20px;
+    padding: 15px 20px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+    transition: all 0.1s ease-in;
+}
+
+.chifoumi .commands button {
+    background-color: lightseagreen;
+    color: white;
+    margin-right: 20px;
+    padding: 15px 20px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+    transition: all 0.1s ease-in;
+}
+
+.round {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.result {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.versus p {
+    font-weight: bold;
+    color: red;
+}
+.finalResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px auto;
+    height: 70px;
+    width: 50%;
+    background-color: rgba(139, 139, 139, 0.2);
+    border-radius: 20px;
+    font-family: cursive, sans-serif;
+    font-size: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.choice-selected { 
+    border: 5px solid lightseagreen;
+}
+
+.count-result {
+    position: absolute;
+    top: 0;
+    right: -80px;
+}
+
+
+
+
+
 
 /*FOOTER*/
 .bg-footer {
