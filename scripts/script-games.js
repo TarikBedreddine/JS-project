@@ -164,8 +164,19 @@ $(document).ready(function () {
         }
     }
 
+
+
+
     // When user click play 
     $(document).on("click", "#play", function () {
+        if (reset > 1) {
+            $("#play").css("backgroundColor", "lightgray")
+            $("#playAgain").css(
+                {
+                    "background-color" : "lightseagreen",
+                    "color": "white"
+                })
+        }
         // Check if the user has clicked one image 
         if (playerChoice !== "") {
             // A game is played in 3 rounds (0 is counted) 
@@ -184,6 +195,13 @@ $(document).ready(function () {
         $('.computerChoice #computerChoice').text("")
         $('.versus').text("")
         $(".round h3").text("")
+        $("#play").css("backgroundColor", "lightseagreen")
+        $("#playAgain").css(
+            {
+                "background-color" : "lightgray",
+                "color": "black"
+            })
+
     })
 })
 
